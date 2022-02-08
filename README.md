@@ -23,12 +23,17 @@ Then navigate your browser to https://127.0.0.1:3000/ to see your site.
 
 ### Running one of commands
 
-To run a one off command, run it within the web service, e.g:
+To run a one off command, open a bash command within the web service using:
 
 ```bash
-$ ./bin/docker/bundle exec rails db:migrate
-$ ./bin/docker/bundle
-$ ./bin/docker/yarn
+$ ./bin/docker/base
+```
+
+Then you can access the normal bin stubs such as
+```bash
+$ ./bin/rails c
+$ ./bin/rails g controller pages
+$ ./bin/rails db:migrate
 ```
 
 ### Restoring a database
