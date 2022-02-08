@@ -40,3 +40,6 @@ yarn-debug.log*
 
 # Ignore the vendor bundle
 vendor/bundle/
+
+# Ignore IDE files
+.idea/*
