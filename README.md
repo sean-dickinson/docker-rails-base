@@ -16,7 +16,7 @@ Welcome to your [Ruby On Rails](https://rubyonrails.org/) app.
 - JS Bundling with esbuild
 - Turbo and Stimulus from Hotwire
 - Image Proccessing Support
-- Rspec Testing
+- Rspec Testing (with Github actions)
 
 ## Setup & Running Locally
 
@@ -29,7 +29,7 @@ $ ./bin/docker/start
 
 This will build the docker image, then setup the `bin/setup` file which will run `bundle`, `yarn` & create the database.
 
-Then navigate your browser to https://127.0.0.1:3000/ to see your site.
+Then navigate your browser to http://127.0.0.1:3000/ to see your site.
 
 ### Running one of commands
 
