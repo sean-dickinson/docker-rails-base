@@ -19,7 +19,6 @@ gem "sidekiq", "~> 6.1"
 gem "sidekiq-cron", "~> 1.2"
 gem "turbo-rails", "~> 1.0"
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
-gem "webpacker", "~> 5.0"
 gem 'jsbundling-rails', "~> 1.0"
 gem 'cssbundling-rails', "~> 1.0"
 

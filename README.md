@@ -26,7 +26,7 @@ Then navigate your browser to https://127.0.0.1:3000/ to see your site.
 To run a one off command, open a bash command within the web service using:
 
 ```bash
-$ ./bin/docker/base
+$ ./bin/docker/bash
 ```
 
 Then you can access the normal bin stubs such as

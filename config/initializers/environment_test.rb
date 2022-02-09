@@ -1,0 +1,1 @@
+puts ENV['DATABASE_URL']

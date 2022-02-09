@@ -19,14 +19,12 @@ x-app: &app
   environment:
     REDIS_URL: redis://@redis:6379/1
     DATABASE_URL: postgres://postgres:postgres@postgres:5432/
-    WEBPACKER_DEV_SERVER_HOST: webpacker
   entrypoint: ./bin/docker/entrypoints/wait-for-web.sh
   volumes:
     - .:/usr/src/app:cached
     - bundler:/usr/local/bundle:delegated
     - bootsnap_cache:/usr/src/bootsnap:delegated
     - rails_cache:/usr/src/app/tmp/cache:delegated
-    - packs:/usr/src/app/public/packs:delegated
     - node_modules:/usr/src/app/node_modules:delegated
     - yarn_cache:/usr/src/yarn:delegated
     - letter_opener:/usr/src/app/tmp/letter_opener:delegated
@@ -40,8 +38,8 @@ services:
     volumes:
       - postgresql:/var/lib/postgresql/data:delegated
     # Uncomment to access this containers Postgres instance via port 5432
-    #ports:
-      #- "127.0.0.1:5432:5432"
+#    ports:
+#      - "127.0.0.1:5432:5432"
     environment:
       PSQL_HISTFILE: /root/log/.psql_history
       POSTGRES_USER: postgres
@@ -64,7 +62,8 @@ services:
   web:
     <<: *app
     entrypoint: ./bin/docker/entrypoints/wait-for-postgres.sh
-    command: bash -c "./bin/docker/prepare-to-start-rails && ./bin/rails server -p 3000 -b '0.0.0.0'"
+    command: bash -c "./bin/docker/prepare-to-start-rails && ./bin/dev"
+    tty: true
     ports:
       - "127.0.0.1:3000:3000"
 
@@ -72,21 +71,12 @@ services:
     <<: *app
     command: bundle exec sidekiq -C config/sidekiq.yml
 
-  webpacker:
-    <<: *app
-    command: ./bin/webpack-dev-server
-    environment:
-      WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
-    ports:
-      - "127.0.0.1:3035:3035"
-
 volumes:
   postgresql:
   redis:
   bundler:
   bootsnap_cache:
   rails_cache:
-  packs:
   node_modules:
   yarn_cache:
   letter_opener:
