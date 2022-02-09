@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.0.1"
 
 gem "bootsnap", ">= 1.4.4", require: false
-# Used for imagemagick: https://github.com/janko/image_processing
+# Used for imagemagick or vips: https://github.com/janko/image_processing
 gem "image_processing", "~> 1.12"
 # Logging replacement with condensed formatting: https://github.com/roidrage/lograge
 gem "lograge", "~> 0.11.2"
