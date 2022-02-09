@@ -2,7 +2,8 @@
   "name": "app",
   "private": true,
   "scripts": {
-    "build:css": "postcss ./app/assets/stylesheets/application.postcss.css -o ./app/assets/builds/application.css"
+    "build:css": "postcss ./app/assets/stylesheets/application.postcss.css -o ./app/assets/builds/application.css",
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds"
   },
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
@@ -10,6 +11,7 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
     "autoprefixer": "^10.4.2",
+    "esbuild": "^0.14.21",
     "postcss": "^8.4.6",
     "postcss-cli": "^9.1.0",
     "postcss-nesting": "^10.1.2",
