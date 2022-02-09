@@ -281,6 +281,8 @@ GEM
       rubocop-performance (= 1.11.5)
     standardrb (1.0.0)
       standard
+    stimulus-rails (1.0.2)
+      railties (>= 6.0.0)
     thor (1.1.0)
     turbo-rails (1.0.1)
       actionpack (>= 6.0.0)
@@ -332,6 +334,7 @@ DEPENDENCIES
   sidekiq (~> 6.1)
   sidekiq-cron (~> 1.2)
   standardrb (~> 1.0)
+  stimulus-rails (~> 1.0)
   turbo-rails (~> 1.0)
   tzinfo-data
   web-console (>= 4.1.0)
