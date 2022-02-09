@@ -2,22 +2,26 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.0.1"
 
-gem "barnes", "~> 0.0.8"
 gem "bootsnap", ">= 1.4.4", require: false
+# Used for imagemagick: https://github.com/janko/image_processing
 gem "image_processing", "~> 1.12"
+# Logging replacement with condensed formatting: https://github.com/roidrage/lograge
 gem "lograge", "~> 0.11.2"
 gem "pg", "~> 1.1"
+# Helper for styling emails: https://github.com/fphilipe/premailer-rails
 gem "premailer-rails", "~> 1.11"
 gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.4", ">= 6.1.4.1"
 gem "redis", "~> 4.2"
-gem "sass-rails", ">= 6"
+# TODO: replace with non-deprecated version of the sdk
 gem "sentry-raven", "~> 3.1"
 gem "sidekiq", "~> 6.1"
 gem "sidekiq-cron", "~> 1.2"
-gem "turbolinks", "~> 5"
+gem "turbo-rails", "~> 1.0"
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 gem "webpacker", "~> 5.0"
+gem 'jsbundling-rails', "~> 1.0"
+gem 'cssbundling-rails', "~> 1.0"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
